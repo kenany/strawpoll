@@ -1,4 +1,4 @@
-# node-strawpoll
+# strawpoll
 
 Create polls on [Straw Poll](http://strawpoll.me/).
 
