@@ -20,7 +20,7 @@
     "test": "tape test/index.js"
   },
   "dependencies": {
-    "hyperquest": "^0.2.0"
+    "hyperquest": "^0.3.0"
   },
   "devDependencies": {
     "concat-stream": "^1.4.1",
