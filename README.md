@@ -1,6 +1,7 @@
 # strawpoll
 
 [![Build Status](https://travis-ci.org/KenanY/strawpoll.svg?branch=master)](https://travis-ci.org/KenanY/strawpoll)
+[![Dependency Status](https://gemnasium.com/KenanY/strawpoll.svg)](https://gemnasium.com/KenanY/strawpoll)
 
 Create polls on [Straw Poll](http://strawpoll.me/).
 
