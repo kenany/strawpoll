@@ -26,7 +26,7 @@ test('works', function(t) {
   };
 
   var server = nock('http://strawpoll.me')
-    .post('/ajax/new-poll')
+    .post('/api/v2/polls')
     .reply(200, '{"id": 12345}');
 
   var stream = strawpoll(TEST_OPTIONS);
