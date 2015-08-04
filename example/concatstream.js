@@ -15,6 +15,7 @@ var stream = strawpoll({
 
 stream.pipe(concat(function(poll) {
   poll = JSON.parse(poll);
+  console.log(poll);
   // poll.id is your poll's id
   // check out your poll at strawpoll.me/id
 }));
