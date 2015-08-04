@@ -26,6 +26,6 @@
     "concat-stream": "^1.4.1",
     "lodash.isfunction": "^3.0.6",
     "nock": "^2.9.1",
-    "tape": "^2.3.2"
+    "tape": "^4.0.2"
   }
 }
