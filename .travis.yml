@@ -7,6 +7,7 @@ git:
 branches:
   only:
     - master
+sudo: false
 before_install:
   - npm install -g npm
   - npm --version
