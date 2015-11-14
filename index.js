@@ -7,7 +7,20 @@ var HEADERS = {
   'X-Requested-With': 'node-strawpoll'
 };
 
-module.exports = function(options) {
+module.exports = strawpoll;
+
+function strawpoll(options) {
+  if(options) {
+    return strawpoll.create(options);
+  }
+}
+
+strawpoll.get= function(id) {
+  var stream = hyperquest.get(URL + '/' + id);
+  return stream;
+};
+
+strawpoll.create = function(options) {
   var stream = hyperquest.post(URL, {headers: HEADERS});
   stream.end(querystring.stringify(options));
   return stream;

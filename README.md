@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/KenanY/strawpoll.svg?branch=master)](https://travis-ci.org/KenanY/strawpoll)
 [![Dependency Status](https://gemnasium.com/KenanY/strawpoll.svg)](https://gemnasium.com/KenanY/strawpoll)
 
-Create polls on [Straw Poll](http://strawpoll.me/).
+Create and get polls on [Straw Poll](http://strawpoll.me/).
 
 ## Example
 
@@ -57,6 +57,22 @@ var stream = strawpoll({
   }));
 ```
 
+An example of getting a poll with concat-stream:
+
+``` javascript
+var concat = require('concat-stream');
+var strawpoll = require('strawpoll');
+
+var stream = strawpoll.get(1)
+  .pipe(concat(function(poll) {
+    //poll = JSON.parse(poll);
+    //poll.id is the id you requested
+    //poll.title is the title of the poll
+  }));
+```
+The JSON parsed response will match examples from [Strawpoll API](https://github.com/strawpoll/strawpoll/wiki/API).
+
+
 ## Installation
 
 ``` bash
@@ -80,3 +96,12 @@ Returns a [hyperquest](https://github.com/substack/hyperquest) stream which is
   - `options` (_Array_)
   - `multi` (_Boolean_)
   - `permissive` (_Boolean_)
+
+### strawpoll.get(id)
+
+returns a [hyperquest](https://github.com/substack/hyperquest) stream which is
+`GET`ing poll information from Straw poll
+
+### strawpoll.create(options)
+
+Alternative way to call strawpoll(options)
