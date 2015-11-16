@@ -7,21 +7,18 @@ var HEADERS = {
   'X-Requested-With': 'node-strawpoll'
 };
 
-module.exports = strawpoll;
-
-function strawpoll(options) {
-  if(options) {
-    return strawpoll.create(options);
-  }
+function create(options) {
+  var stream = hyperquest.post(URL, {headers: HEADERS});
+  stream.end(querystring.stringify(options));
+  return stream;
 }
 
-strawpoll.get= function(id) {
+function get(id) {
   var stream = hyperquest.get(URL + '/' + id);
   return stream;
 };
 
-strawpoll.create = function(options) {
-  var stream = hyperquest.post(URL, {headers: HEADERS});
-  stream.end(querystring.stringify(options));
-  return stream;
-};
+create.create = create;
+create.get = get;
+
+module.exports = create;
